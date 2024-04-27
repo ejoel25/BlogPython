@@ -1,0 +1,72 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+
+            <h1><a href="/">PYTHON </a></h1>
+        </div>
+        <div class="content container">
+            <header>
+                <p> Python es un lenguaje de programación de alto nivel, interpretado y de código abierto, creado por Guido van Rossum en 1991.
+                     Es conocido por su sintaxis clara y legible, lo que lo hace ideal tanto para principiantes 
+                     como para programadores experimentados.
+                    
+                     Python también es fácil de aprender. Estos dos factores han contribuido a que sea el lenguaje preferido de los principiantes que incursionan en el desarrollo de software.
+                     Su versatilidad como lenguaje de programación para propósitos generales lo hace adecuado para las necesidades de muchas industrias.
+                    </p>
+                 <h2>
+                    Para qué sirve Python
+                 </h2>
+                 <p>
+                    Python está en todo, desde programación de instrumentos hasta software de computadoras, desarrollo web y aplicaciones móviles.
+                     Incluso, te permite hacer comentarios para que tengas recordatorios para funciones futuras o indicar problemas en una línea de código. 
+                    Python es genial para casi cualquier necesidad de desarrollo, ya sea programación de servidores, operación de sistemas, software, juegos y mucho más.
+                    <p>
+                        <h2>
+                            Cuáles son las características de Python?
+                         </h2>
+                           <h3>
+                            Un lenguaje interpretado
+                           </h3>
+                         <p>
+                            Python es un lenguaje interpretado, lo que significa que ejecuta directamente el código línea por línea.
+                             Si existen errores en el código del programa, su ejecución se detiene. Así, los programadores pueden encontrar errores en el código con rapidez.
+                             <p>
+                                <h3>
+                                    Un lenguaje fácil de utilizar
+                                </h3>
+                                <p>
+                                    Python utiliza palabras similares a las del inglés. A diferencia de otros lenguajes de programación, Python no utiliza llaves. 
+                                    En su lugar, utiliza sangría. 
+                                    <p>
+                                        <h3>Un lenguaje tipeado dinámicamente</h3>
+                                        <p>Los programadores no tienen que anunciar tipos de variables cuando escriben código porque Python los determina en el tiempo de ejecución. 
+                                           Debido a esto, es posible escribir programas de Python con mayor rapidez.<p>
+                                         <h3>Un lenguaje de alto nivel</h3>
+                                         <p>Python es más cercano a los idiomas humanos que otros lenguajes de programación.
+                                             Por lo tanto, los programadores no deben preocuparse sobre sus funcionalidades subyacentes, como la arquitectura y la administración de la memoria.<p>
+                                             
+
+            </header>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %} 
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
